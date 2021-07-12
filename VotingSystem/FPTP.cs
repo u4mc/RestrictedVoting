@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RestrictedVoting.VotingSystem
+namespace RestrictedVoting
 {
     class FPTP : VotingSystem
     {
-        public override int getVote(int[] votes)
-        {//get highest ranking vote
-            return 0;
+        public override int[] getResults()
+        {
+
+            int[] a = new int[1];
+
+            return a;
         }
     }
 }

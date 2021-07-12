@@ -4,12 +4,6 @@ using System.Text;
 
 namespace RestrictedVoting.Objects
 {
-    class Voter
-    {
-        public int Id { get; set; }
-        public Candidate[] votes { get; set; }
-    }
-
     class Candidate
     {
         String name;
@@ -20,15 +14,21 @@ namespace RestrictedVoting.Objects
     class Election
     {
         //Election data
-        public Dictionary<Candidate, int> candidates;
+        private Dictionary<Candidate, int> candidates;
+        private VotingSystem votingSystem;
+
+        private csvParser electionData;
         public int voterCount;
 
-
-        public void addCandidate(Candidate candidate)
+        public Election(String dataFilepath, String settingsFilepath)
         {
-
+            electionData = new csvParser(dataFilepath);
         }
-        
+
+        public void runElection()
+        {
+            votingSystem.getResults();
+        }
         public void printElectionResult()
         {
 
